@@ -1,0 +1,1011 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asma ul-Husna — The Beautiful Names of Allah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Lateef:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --bg:        #fdfdfc;
+  --surface:   #ffffff;
+  --surface-2: #f8f8f6;
+  --border:    rgba(0,0,0,0.07);
+  --border-md: rgba(0,0,0,0.11);
+
+  --ink-1: #1a1a18;
+  --ink-2: #4a4a46;
+  --ink-3: #888884;
+  --ink-4: #b8b8b2;
+
+  --teal:       #2e7d72;
+  --teal-light: #4a9e92;
+  --teal-wash:  #f0f8f7;
+
+  --gold:       #a07828;
+  --gold-wash:  #faf6ed;
+
+  --shadow-xs: 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 28px rgba(0,0,0,0.08);
+  --shadow-lg: 0 20px 56px rgba(0,0,0,0.11);
+
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 24px;
+  --r-pill: 999px;
+
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-arabic:  'Lateef', serif;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
+
+body {
+  background: var(--bg);
+  color: var(--ink-1);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Subtle page texture */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 40% at 0% 0%, rgba(46,125,114,0.035) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 100% 100%, rgba(160,120,40,0.025) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+
+/* ─────────────────────────────
+   HEADER
+───────────────────────────── */
+header {
+  position: relative; z-index: 10;
+  text-align: center;
+  padding: 72px 24px 52px;
+  max-width: 720px; margin: 0 auto;
+}
+
+.bismillah-pill {
+  display: inline-flex; align-items: center;
+  gap: 10px;
+  background: var(--teal-wash);
+  border: 1px solid rgba(46,125,114,0.15);
+  border-radius: var(--r-pill);
+  padding: 10px 28px 12px;
+  margin-bottom: 36px;
+  animation: riseIn 0.9s cubic-bezier(0.22,1,0.36,1) both;
+}
+.bismillah-text {
+  font-family: var(--font-arabic);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  color: var(--teal);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.header-kicker {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  animation: riseIn 0.9s cubic-bezier(0.22,1,0.36,1) both 0.08s;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 400;
+  color: var(--ink-1);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+  animation: riseIn 0.9s cubic-bezier(0.22,1,0.36,1) both 0.14s;
+}
+h1 em {
+  font-style: italic;
+  color: var(--teal);
+}
+
+.header-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--ink-3);
+  line-height: 1.75;
+  max-width: 420px;
+  margin: 0 auto;
+  animation: riseIn 0.9s cubic-bezier(0.22,1,0.36,1) both 0.2s;
+}
+
+.header-rule {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; margin: 28px auto 0; width: 140px;
+  animation: riseIn 0.9s cubic-bezier(0.22,1,0.36,1) both 0.24s;
+}
+.header-rule::before, .header-rule::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-md), transparent);
+}
+.rule-gem {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.5;
+}
+
+/* ─────────────────────────────
+   SEARCH
+───────────────────────────── */
+.search-wrap {
+  position: relative; z-index: 10;
+  max-width: 600px; margin: 0 auto 44px;
+  padding: 0 24px;
+  animation: riseIn 0.9s cubic-bezier(0.22,1,0.36,1) both 0.28s;
+}
+
+.search-prompt {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-2);
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.search-bar {
+  display: flex; align-items: center;
+  background: var(--surface);
+  border: 1.5px solid var(--border-md);
+  border-radius: var(--r-pill);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.25s, box-shadow 0.25s;
+  overflow: hidden;
+}
+.search-bar:focus-within {
+  border-color: var(--teal-light);
+  box-shadow: 0 0 0 4px rgba(46,125,114,0.07), var(--shadow-sm);
+}
+
+.search-ico {
+  padding: 0 6px 0 20px;
+  color: var(--ink-4);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.search-input {
+  flex: 1;
+  border: none; outline: none; background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--ink-1);
+  padding: 15px 12px;
+}
+.search-input::placeholder { color: var(--ink-4); font-style: italic; }
+
+.search-cta {
+  margin: 5px;
+  padding: 10px 20px;
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-pill);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.15s;
+}
+.search-cta:hover { background: var(--teal-light); transform: scale(0.98); }
+.search-cta:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* Loading dots */
+.search-loading {
+  display: none; text-align: center;
+  padding: 16px; font-style: italic;
+  font-size: 0.9rem; color: var(--ink-3);
+}
+.search-loading.on { display: block; }
+.dots { display: inline-flex; gap: 4px; margin-left: 4px; vertical-align: middle; }
+.dots span {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--teal);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+.dots span:nth-child(2) { animation-delay: 0.2s; }
+.dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes pulse {
+  0%,80%,100% { opacity:0.2; transform:scale(0.75); }
+  40% { opacity:1; transform:scale(1); }
+}
+
+/* AI Result card */
+.ai-card {
+  display: none;
+  margin-top: 16px;
+  background: var(--surface);
+  border: 1.5px solid rgba(46,125,114,0.18);
+  border-radius: var(--r-lg);
+  padding: 28px 28px 24px;
+  box-shadow: var(--shadow-md);
+  position: relative; overflow: hidden;
+}
+.ai-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-light), rgba(160,120,40,0.6));
+}
+.ai-card.on { display: block; animation: riseIn 0.4s ease both; }
+
+.ai-eyebrow {
+  font-size: 0.66rem; letter-spacing: 0.44em;
+  text-transform: uppercase; font-weight: 500;
+  color: var(--teal); margin-bottom: 16px;
+}
+.ai-name-row {
+  display: flex; align-items: baseline; gap: 12px;
+  flex-wrap: wrap; margin-bottom: 4px;
+}
+.ai-arabic-text {
+  font-family: var(--font-arabic);
+  font-size: 2.1rem; line-height: 1.4;
+}
+.ai-english-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem; font-weight: 400;
+  color: var(--ink-1);
+}
+.ai-translit {
+  font-size: 0.82rem; font-style: italic;
+  color: var(--ink-3); margin-bottom: 12px;
+}
+.ai-pill {
+  display: inline-block; border-radius: var(--r-pill);
+  padding: 3px 12px; font-size: 0.76rem;
+  font-weight: 500; letter-spacing: 0.06em;
+  margin-bottom: 18px;
+}
+.ai-sep { height: 1px; background: var(--border); margin: 14px 0; }
+.ai-dua-eyebrow {
+  font-size: 0.66rem; letter-spacing: 0.44em;
+  text-transform: uppercase; font-weight: 500;
+  color: var(--gold); margin-bottom: 10px;
+}
+.ai-dua-body {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem; line-height: 1.88;
+  color: var(--ink-2);
+}
+.ya { font-style: normal; font-weight: 400; }
+
+/* ─────────────────────────────
+   FILTER BAR
+───────────────────────────── */
+.filter-wrap {
+  position: relative; z-index: 10;
+  max-width: 860px; margin: 0 auto 52px;
+  padding: 0 24px;
+  animation: riseIn 0.9s cubic-bezier(0.22,1,0.36,1) both 0.32s;
+}
+.filter-kicker {
+  font-size: 0.66rem; letter-spacing: 0.42em;
+  text-transform: uppercase; font-weight: 500;
+  color: var(--ink-4);
+  text-align: center; margin-bottom: 14px;
+}
+.filter-pills {
+  display: flex; flex-wrap: wrap;
+  gap: 8px; justify-content: center;
+}
+.fpill {
+  background: var(--surface);
+  border: 1.5px solid var(--border-md);
+  color: var(--ink-2);
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 400;
+  padding: 7px 18px;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  box-shadow: var(--shadow-xs);
+  transition: all 0.22s ease;
+}
+.fpill:hover {
+  border-color: var(--teal-light);
+  color: var(--teal);
+  background: var(--teal-wash);
+}
+.fpill.active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(46,125,114,0.28);
+}
+
+/* ─────────────────────────────
+   CONTENT — GROUPED CATEGORIES
+───────────────────────────── */
+.content {
+  position: relative; z-index: 10;
+  max-width: 1060px; margin: 0 auto;
+  padding: 0 24px 96px;
+}
+
+/* Category block */
+.cat-block {
+  margin-bottom: 60px;
+  animation: riseIn 0.6s ease both;
+}
+
+.cat-head {
+  display: flex; align-items: center;
+  gap: 16px; margin-bottom: 22px;
+}
+.cat-badge {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; flex-shrink: 0;
+}
+.cat-info { flex: 0 0 auto; }
+.cat-name {
+  font-family: var(--font-display);
+  font-size: 1.45rem; font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+.cat-tagline {
+  font-size: 0.8rem; font-style: italic;
+  color: var(--ink-4);
+}
+.cat-rule {
+  flex: 1; height: 1px;
+  background: var(--border);
+}
+
+/* Cards grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+  gap: 14px;
+}
+
+/* ── Name card ── */
+.ncard {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 22px 20px 18px;
+  cursor: pointer;
+  position: relative; overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+.ncard-stripe {
+  position: absolute; top: 0; left: 0; right: 0; height: 2.5px;
+  opacity: 0.5;
+  transition: opacity 0.28s;
+}
+.ncard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-md);
+}
+.ncard:hover .ncard-stripe { opacity: 1; }
+
+.ncard-arabic {
+  font-family: var(--font-arabic);
+  font-size: 2.4rem;
+  direction: rtl; text-align: right;
+  line-height: 1.35; margin-bottom: 10px;
+}
+.ncard-english {
+  font-family: var(--font-display);
+  font-size: 1.1rem; font-weight: 400;
+  color: var(--ink-1); margin-bottom: 2px;
+}
+.ncard-translit {
+  font-size: 0.76rem; font-style: italic;
+  color: var(--ink-3); margin-bottom: 14px;
+}
+.ncard-sep { height: 1px; background: var(--border); margin-bottom: 13px; }
+.ncard-preview {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.86rem; line-height: 1.7;
+  color: var(--ink-3);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.ncard-foot {
+  display: flex; align-items: center;
+  justify-content: flex-end; gap: 6px;
+}
+.ncard-cta {
+  font-size: 0.7rem; letter-spacing: 0.18em;
+  text-transform: uppercase; font-weight: 500;
+}
+.ncard-arrow {
+  width: 20px; height: 20px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 0.58rem;
+}
+
+/* ─────────────────────────────
+   MODAL
+───────────────────────────── */
+.overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(10,10,8,0.35); z-index: 1000;
+  align-items: center; justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.overlay.on { display: flex; animation: fadeIn 0.22s ease; }
+
+.modal {
+  position: relative;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  max-width: 540px; width: 100%;
+  max-height: 88vh; overflow-y: auto;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.18);
+  animation: popIn 0.38s cubic-bezier(0.22,1,0.36,1) both;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-md) transparent;
+}
+.modal::-webkit-scrollbar { width: 3px; }
+.modal::-webkit-scrollbar-thumb { background: var(--border-md); border-radius: 2px; }
+
+/* Arch header */
+.modal-arch {
+  position: relative;
+  text-align: center;
+  padding: 52px 36px 38px;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  overflow: hidden;
+}
+/* Decorative oval behind text */
+.arch-oval {
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 130%; height: 180px;
+  border-radius: 50%;
+  opacity: 0.14;
+}
+.arch-cat {
+  position: relative; z-index: 1;
+  font-size: 0.65rem; letter-spacing: 0.5em;
+  text-transform: uppercase; font-weight: 500;
+  margin-bottom: 10px;
+}
+.arch-title {
+  position: relative; z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.arch-need {
+  position: relative; z-index: 1;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 400;
+}
+.arch-need::before, .arch-need::after { content: " — "; }
+
+/* Modal close */
+.modal-x {
+  position: absolute; top: 14px; right: 14px; z-index: 20;
+  width: 28px; height: 28px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; color: var(--ink-2);
+  transition: background 0.18s;
+  backdrop-filter: blur(4px);
+}
+.modal-x:hover { background: #fff; }
+
+/* Modal body */
+.modal-body {
+  padding: 30px 38px 40px;
+}
+.modal-arabic-big {
+  font-family: var(--font-arabic);
+  font-size: 2.8rem;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.modal-translit {
+  text-align: center;
+  font-size: 0.82rem; font-style: italic;
+  color: var(--ink-3); margin-bottom: 28px;
+}
+.modal-dua-eyebrow {
+  font-size: 0.65rem; letter-spacing: 0.44em;
+  text-transform: uppercase; font-weight: 500;
+  color: var(--gold);
+  text-align: center; margin-bottom: 16px;
+}
+.modal-dua-card {
+  background: var(--surface-2);
+  border-radius: var(--r-sm);
+  padding: 20px 22px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+}
+.modal-dua-card:last-child { margin-bottom: 0; }
+.modal-dua-para {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.97rem; line-height: 1.94;
+  color: var(--ink-2);
+  text-align: center;
+}
+.modal-dua-para .ya { font-style: normal; font-weight: 400; }
+
+/* ─────────────────────────────
+   FOOTER
+───────────────────────────── */
+footer {
+  position: relative; z-index: 10;
+  text-align: center;
+  padding: 0 24px 52px;
+  font-size: 0.8rem; font-style: italic;
+  color: var(--ink-4);
+}
+
+/* ─────────────────────────────
+   ANIMATIONS
+───────────────────────────── */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.94) translateY(18px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ─────────────────────────────
+   RESPONSIVE
+───────────────────────────── */
+@media (max-width: 600px) {
+  .modal-body { padding: 22px 22px 32px; }
+  .content { padding: 0 16px 64px; }
+  header { padding: 52px 20px 40px; }
+  .cards-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="bismillah-pill" >
+    <span class="bismillah-text">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِيمِ</span>
+  </div>
+  <p class="header-kicker">Asma ul-Husna</p>
+  <h1>The <em>Beautiful</em> Names<br>of Allah</h1>
+  <div class="header-rule"><div class="rule-gem"></div></div>
+  <p class="header-sub">Call upon Him by His most beautiful names. Find the one that speaks to your heart today.</p>
+</header>
+
+<!-- ── SEARCH ── -->
+<div class="search-wrap">
+  <p class="search-prompt">How are you feeling right now?</p>
+  <div class="search-bar">
+    <span class="search-ico">✦</span>
+    <input class="search-input" id="searchInput" type="text"
+      placeholder="e.g. I feel alone, I'm anxious, I need peace…" />
+    <button class="search-cta" id="searchBtn">Find a Name</button>
+  </div>
+  <div class="search-loading" id="searchLoading">
+    Searching through the Beautiful Names
+    <span class="dots"><span></span><span></span><span></span></span>
+  </div>
+  <div class="ai-card" id="aiCard"></div>
+</div>
+
+<!-- ── FILTER ── -->
+<div class="filter-wrap">
+  <p class="filter-kicker">Explore all names by what you seek</p>
+  <div class="filter-pills" id="filterPills"></div>
+</div>
+
+<!-- ── CONTENT ── -->
+<div class="content" id="content"></div>
+
+<!-- ── FOOTER ── -->
+<footer>May these names bring light to your heart — <em>Allahu Akbar</em></footer>
+
+<!-- ── MODAL ── -->
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal">
+    <button class="modal-x" id="modalX">✕</button>
+    <div id="modalInner"></div>
+  </div>
+</div>
+
+<script>
+/* ── CATEGORY METADATA ── */
+const CATS = {
+  "Friendship":  { color:"#3d8f6a", wash:"#eef8f3", icon:"🌿", tag:"Names for when you need companionship" },
+  "Loneliness":  { color:"#c0605a", wash:"#fdf1f0", icon:"🤍", tag:"Names for when you feel far from everything" },
+  "Guidance":    { color:"#a07828", wash:"#fdf7ea", icon:"🕊️", tag:"Names for when you're searching for the way" },
+  "Inner Peace": { color:"#2e7d72", wash:"#f0f8f7", icon:"🌾", tag:"Names for when you crave stillness" },
+  "Mercy":       { color:"#9a5898", wash:"#faf0f9", icon:"🤲", tag:"Names for when you need to be embraced" },
+  "Forgiveness": { color:"#4870a8", wash:"#eef3fb", icon:"💧", tag:"Names for when shame keeps you from returning" },
+  "Love":        { color:"#b85870", wash:"#fdf0f3", icon:"🌸", tag:"Names for when you long to feel loved" },
+  "Security":    { color:"#507080", wash:"#eff4f7", icon:"🛡️", tag:"Names for when fear takes hold" },
+  "Being Seen":  { color:"#686868", wash:"#f5f5f4", icon:"👁️", tag:"Names for when you feel invisible" },
+  "Wisdom":      { color:"#906828", wash:"#fdf6e8", icon:"📿", tag:"Names for when you can't see the wisdom" },
+  "Unstuck":     { color:"#3a8870", wash:"#edf6f2", icon:"🗝️", tag:"Names for when every door seems closed" },
+  "Provision":   { color:"#5a8040", wash:"#f2f8ec", icon:"🌻", tag:"Names for when you worry about provision" },
+  "Strength":    { color:"#a86030", wash:"#faf0e8", icon:"🌟", tag:"Names for when you need to be rebuilt" },
+  "Justice":     { color:"#6848a0", wash:"#f4f0fb", icon:"⚖️", tag:"Names for when the world feels rigged" },
+  "Closeness":   { color:"#2e7d72", wash:"#f0f8f7", icon:"🕋", tag:"Names for when you feel distant from Him" },
+};
+
+/* ── ALL NAMES DATA ── */
+const NAMES = [
+  // FRIENDSHIP
+  { cat:"Friendship", arabic:"ٱلوَلِيُّ", transliteration:"Al-Waliyy", meaning:"The Protective Friend", need:"When you need a friend",
+    duas:["Ya Waliyy, be my closest friend when the world drifts away. Guard me with the grip that never slips. Guide me gently through what I don't understand, and let every loss lead me back to You."] },
+  { cat:"Friendship", arabic:"ٱلرَّفِيقُ", transliteration:"Ar-Rafeeq", meaning:"The Gentle Friend", need:"When loneliness creeps in",
+    duas:["Ya Rafeeq, Be tender with my soul as You unfold Your plan. Soften the path without removing its purpose. Make me gentle with others as You've been gentle with me, and when I'm lonely, fill that space with Your company."] },
+  { cat:"Friendship", arabic:"ٱلبَرُّ", transliteration:"Al-Barr", meaning:"The Source of All Good", need:"When you need goodness around you",
+    duas:["Ya Barr, keep me firm on the grounds of Your goodness. Make my faith steady when my heart trembles. Let me love what brings me to Your stability, and make me patient with what keeps me on its shore."] },
+
+  // LONELINESS
+  { cat:"Loneliness", arabic:"ٱلقَرِيبُ", transliteration:"Al-Qareeb", meaning:"The Close", need:"When you feel far from everything",
+    duas:["Ya Qareeb, You are nearer than every thought I hide. Let me feel Your nearness in the stillness of my prayer. Let the clarity and comfort of Your closeness cut through all the noise outside. And forgive me for what should have never made it inside."] },
+  { cat:"Loneliness", arabic:"ٱلمُجِيبُ", transliteration:"Al-Mujeeb", meaning:"The Responsive", need:"When no one seems to hear you",
+    duas:["Ya Mujeeb, answer not only what I ask, but what I mean. Give me what I would have prayed for if I knew what was best for me. When I raise my hands to You, fill them only with what draws me closer to You and protect me from ever questioning You or believing that an answer is not possible."] },
+  { cat:"Loneliness", arabic:"ٱلسَّمِيعُ", transliteration:"As-Samee'", meaning:"The All-Hearing", need:"When you need to be heard",
+    duas:["Ya Samee', You hear every sound before it's spoken, and every silence before it finds words. Inspire in me the words that are pleasing to You, make sincere the du'a that I utter between breaths, and even the ones I make loud alongside others. Let me never doubt that You are listening, and never tire of my calling."] },
+
+  // GUIDANCE
+  { cat:"Guidance", arabic:"ٱلهَادِي", transliteration:"Al-Haady", meaning:"The Guide", need:"When your heart forgets the way",
+    duas:["Ya Haady, guide me when my heart forgets the way. Pull me back from every turn that leads me astray. Let Your guidance feel closer than the doubts in my chest and steadier than the voices that confuse me."] },
+  { cat:"Guidance", arabic:"ٱلنُّورُ", transliteration:"An-Nur", meaning:"The Light", need:"When darkness surrounds you",
+    duas:["Ya Nur, light every darkness I carry within, let Your light pour into my heart and onto all of my other limbs until You make me a light, and everything I see reminds me of You."] },
+  { cat:"Guidance", arabic:"ٱلرَّشِيدُ", transliteration:"Ar-Rasheed", meaning:"The Director", need:"When you need wisdom to choose",
+    duas:["Ya Rasheed, teach me to see truth instinctively. Make faith beloved to me. Make righteousness feel natural. And let sin feel heavy on my chest and hated by my every breath. Inspire me with wisdom that protects me even from myself."] },
+  { cat:"Guidance", arabic:"ٱللَّطِيفُ", transliteration:"Al-Lateef", meaning:"The Kind", need:"When you can't see the way forward",
+    duas:["Ya Lateef, arrange the details of my life with gentleness. Send kindnesses that I may not notice until I look back, but can still feel at every moment. Let Your subtle care reach the corners of my heart that no words or people could ever touch."] },
+
+  // INNER PEACE
+  { cat:"Inner Peace", arabic:"ٱلسَّلَامُ", transliteration:"As-Salaam", meaning:"The Source of Peace", need:"When you crave stillness",
+    duas:["Ya Salaam, send peace into every storm within my chest. Let Your calm settle where fear once lived, Your safety surround what the world cannot protect. Make me a source of peace for others, until I meet You in the home of peace."] },
+  { cat:"Inner Peace", arabic:"ٱلقُدُّوسُ", transliteration:"Al-Quddus", meaning:"The Holy", need:"When your heart needs purifying",
+    duas:["Ya Quddus, purify me inside and out. Cleanse my worship of pride, my heart of resentment, my soul of anything that clouds its way back to You, and make me worthy of the nearness I seek to You."] },
+  { cat:"Inner Peace", arabic:"ٱلسُّبُّوحُ", transliteration:"As-Subbuh", meaning:"The Utterly Perfect", need:"When the world feels too loud",
+    duas:["Ya Subbuh, …how perfect You are beyond everything I can imagine. When the world feels loud and heavy, remind me that You are untouched by its chaos. Let my glory and praise of You rise above the darkness, even if I drowned myself in it. And pull me out of it by Your perfection even after I dragged myself down."] },
+  { cat:"Inner Peace", arabic:"ٱلصَّمَدُ", transliteration:"As-Samad", meaning:"The Supreme Refuge", need:"When you feel empty inside",
+    duas:["Ya Samad, the One who needs nothing while everything needs You, make me whole by depending only on You, fill the hollowness inside of me until no desire within me competes with Your glory."] },
+
+  // MERCY
+  { cat:"Mercy", arabic:"ٱلرَّحۡمَـٰنُ", transliteration:"Ar-Rahman", meaning:"The Entirely Merciful", need:"When you need His mercy",
+    duas:["Ya Rahman, from Your Throne, You wrote mercy upon Yourself. You were merciful before there was anyone to receive mercy. Embrace every part of me with that mercy: my past with its scars, my present with its needs, my future with its uncertainties."] },
+  { cat:"Mercy", arabic:"ٱلرَّحِيمُ", transliteration:"Ar-Raheem", meaning:"The Especially Merciful", need:"When you long to be embraced",
+    duas:["Ya Raheem, let me taste the mercy You keep for those who return, reward me with the mercy I have yet to know, and raise me to the highest place in Paradise despite my lows."] },
+  { cat:"Mercy", arabic:"ٱلرَّءُوفُ", transliteration:"Ar-Ra'uf", meaning:"The Tenderly Merciful", need:"When storms come without warning",
+    duas:["Ya Ra'uf, cover me from storms I don't see coming, mend me before I break, spare me from trials of every kind, let Your mercy reach me in ways I'll only understand when I finally meet You."] },
+
+  // FORGIVENESS
+  { cat:"Forgiveness", arabic:"ٱلغَافِرُ", transliteration:"Al-Ghaafir", meaning:"The Forgiver", need:"When shame keeps you from returning",
+    duas:["Ya Ghaafir, forgive me for every single sin I ever put forth, cover me in this life and the next, and don't let shame keep me from returning to You."] },
+  { cat:"Forgiveness", arabic:"ٱلغَفَّارُ", transliteration:"Al-Ghaffar", meaning:"The Perpetual Forgiver", need:"When you keep falling and rising",
+    duas:["Ya Ghaffar, for every time I fall and rise again, meet me with another chance. Let my heart grow softer with every repentance, and my view of the door of Your mercy only grow wider. For You have never tired of forgiving me despite my constant sins."] },
+  { cat:"Forgiveness", arabic:"ٱلغَفُورُ", transliteration:"Al-Ghafur", meaning:"The All-Forgiving", need:"When the weight of sin feels heavy",
+    duas:["Ya Ghafur, forgive me for what I know and what I don't, what I've done and what I still may do, wash away every hidden trace of my wrongdoing, and turn the stains of my past into light on my scrolls. Reach me with Your forgiveness even in the holes that I've dug for myself."] },
+  { cat:"Forgiveness", arabic:"ٱلتَّوَّابُ", transliteration:"At-Tawwaab", meaning:"The Acceptor of Repentance", need:"When you want to turn back to Him",
+    duas:["Ya Tawwaab, turn towards me so that I may turn back to You. And call me back every time I drift. And accept me every time I return. Make repentance my constant companion and joy and Jannah my reward in finding You again."] },
+
+  // LOVE
+  { cat:"Love", arabic:"ٱلوَدُودُ", transliteration:"Al-Wadud", meaning:"The Most Loving", need:"When you need to feel loved",
+    duas:["Ya Wadud, love me even after I falter and let Your love reach me through every mercy I overlook. Teach me to love You more than what You give and to find sweetness in every test that draws me closer to Your love. Announce Your love for me in the heavens until I hear that announcement myself in Paradise. Surround me with it in everything around me, and let me feel it deep inside myself."] },
+  { cat:"Love", arabic:"ٱلمُحۡسِنُ", transliteration:"Al-Muhsin", meaning:"The Doer of Good", need:"When you want to reflect His love",
+    duas:["Ya Muhsin, You perfect everything that You decree. Make me one of those who do good in response to Your goodness. Guide me to the ways of good in every single one of my dealings, then let my deeds of benevolence to others be a reflection of Your unmatched perfection."] },
+  { cat:"Love", arabic:"ٱلشَّكُورُ", transliteration:"Ash-Shakur", meaning:"The Most Appreciative", need:"When small efforts feel unseen",
+    duas:["Ya Shakur, For every small effort I make, reward me beyond measure. Let me never grow tired of thanking You, and let me never forget that gratitude itself is a gift from You. Accept from me what is broken and multiply it until it becomes whole."] },
+
+  // SECURITY
+  { cat:"Security", arabic:"ٱلمُؤۡمِنُ", transliteration:"Al-Mu'min", meaning:"The Granter of Faith", need:"When doubt creeps in",
+    duas:["Ya Mu'min, Grant me faith that no fear can shake. Secure my heart in Your promise, and guard my soul from every whisper that breeds doubt. Let my trust in You be heavier than any worry that visits me."] },
+  { cat:"Security", arabic:"ٱلمُهَيۡمِنُ", transliteration:"Al-Muhaymin", meaning:"The Overseeing Protector", need:"When you need watching over",
+    duas:["Ya Muhaymin, the Watchful One Who never sleeps, watch over me in the moments that no one else can. Protect me from what I can and cannot see, and shield me from what I see but cannot change."] },
+  { cat:"Security", arabic:"ٱلحَفِيظُ", transliteration:"Al-Hafeedh", meaning:"The Preserver", need:"When you fear for those you love",
+    duas:["Ya Hafeedh, preserve my faith through trial and time. Guard my loved ones when they are far away from me. Keep safe the blessings I forgot to thank You for, and protect me, for without You I cannot protect myself."] },
+  { cat:"Security", arabic:"ٱلوَكِيلُ", transliteration:"Al-Wakeel", meaning:"The Ultimate Trustee", need:"When things feel beyond your control",
+    duas:["Ya Wakeel, I entrust You my every matter, what I seemingly can handle and that which is obviously beyond my control. Take charge of what confuses me and carry what I cannot hold, and make Your plan more beloved to me than my own, for You are enough for me, no matter what else I own."] },
+
+  // BEING SEEN
+  { cat:"Being Seen", arabic:"ٱلبَصِيرُ", transliteration:"Al-Baseer", meaning:"The All-Seeing", need:"When you feel invisible",
+    duas:["Ya Baseer, You see what no one else sees. Every tear I hide. Every effort unnoticed. Every quiet act of good. Let me find comfort in being seen by You, when I feel invisible to the rest of the world."] },
+  { cat:"Being Seen", arabic:"ٱلشَّهِيدُ", transliteration:"Ash-Shaheed", meaning:"The Witness", need:"When your intentions are pure",
+    duas:["Ya Shaheed, be my witness when my intentions are pure and when they falter let my fear of You set them right. Let me live conscious that You are always truly watching and die as one who lives truthfully under Your sight."] },
+  { cat:"Being Seen", arabic:"ٱلسِّتِّيرُ", transliteration:"As-Sitteer", meaning:"The Concealer", need:"When you fear your flaws being exposed",
+    duas:["Ya Sitteer, cover my faults with the same grace You always have. My flaws even as You heal them. Let my repentance be quiet and my shame sincere, and my forgiveness made complete beneath Your protective veil."] },
+
+  // WISDOM
+  { cat:"Wisdom", arabic:"ٱلعَلِيمُ", transliteration:"Al-'Aleem", meaning:"The All-Knowing", need:"When only He knows what you carry",
+    duas:["Ya 'Aleem, You know what I hide and what I show, what I've done and what I will do. Let what You know of me be better than what people know of me, and forgive me for what only You know. Teach me what benefits me, and let what You keep hidden from me always be for my good."] },
+  { cat:"Wisdom", arabic:"ٱلحَكِيمُ", transliteration:"Al-Hakeem", meaning:"The All-Wise", need:"When you can't see the wisdom",
+    duas:["Ya Hakeem, Your wisdom surrounds what I cannot understand. When I question the purpose, remind me of Your perfection. Grant me the patience to trust Your timing and the insight to see the beauty unfolding in Your decree."] },
+  { cat:"Wisdom", arabic:"ٱلخَبِيرُ", transliteration:"Al-Khabeer", meaning:"The All-Aware", need:"When He knows you better than you know yourself",
+    duas:["Ya Khabeer, You are fully aware of what's within me, my fears, my flaws, and my hidden intentions. Purify what You see inside of me until it is pleasing to You, and let nothing inside me here contradict what will be produced when I stand before You there."] },
+
+  // UNSTUCK
+  { cat:"Unstuck", arabic:"ٱلفَتَّاحُ", transliteration:"Al-Fattaah", meaning:"The Opener", need:"When every door seems closed",
+    duas:["Ya Fattaah, Open doors I cannot find and hearts that I cannot reach. Open paths to good where I only see walls, and open my chest to trust whatever You've decreed. Let every opening You grant me lead me back to You."] },
+  { cat:"Unstuck", arabic:"ٱلخَلَّاقُ", transliteration:"Al-Khallaaq", meaning:"The Constant Creator", need:"When you need a new beginning",
+    duas:["Ya Khallaaq, keep creating new openings when I run out of ways. Create for me new beginnings when I rush to my end, and new realities when I feel doomed by my sins. Remake me with patience when I reach my limits, faith when I'm afraid, and hope when I can't imagine a way forward."] },
+  { cat:"Unstuck", arabic:"ٱلغَنِيُّ", transliteration:"Al-Ghaniyy", meaning:"The Self-Sufficient", need:"When you feel like you have nothing",
+    duas:["Ya Ghaniyy, You are free of all need while I am always in need of You. Let me never beg from those as poor as me. Make me rich through contentment, and fill my heart with gratitude instead of grief."] },
+
+  // PROVISION
+  { cat:"Provision", arabic:"ٱلرَّزَّاقُ", transliteration:"Ar-Razzaaq", meaning:"The Provider", need:"When you worry about provision",
+    duas:["Ya Razzaaq, You provide for every creature in ways we cannot see. Feed my heart before my hands, and let my trust in Your sustenance outweigh my fear of the future. Provide for me ways that bring me closer to You."] },
+  { cat:"Provision", arabic:"ٱلكَرِيمُ", transliteration:"Al-Kareem", meaning:"The Generous and Noble", need:"When generosity feels absent",
+    duas:["Ya Kareem, You are generous beyond what generosity looks like in the hands of people. Make me one of those whose provision is halal, whose gratitude is real, and whose giving is inspired by Yours."] },
+  { cat:"Provision", arabic:"ٱلأَكۡرَمُ", transliteration:"Al-Akram", meaning:"The Most Generous", need:"When provision is delayed",
+    duas:["Ya Akram, the Most Noble of all who give, let the doors of Your provision open for me and for those I love. And when You give, let it soften my heart, not harden it. And when You delay, make me patient and never resentful."] },
+
+  // STRENGTH
+  { cat:"Strength", arabic:"ٱلقَهَّارُ", transliteration:"Al-Qahhaar", meaning:"The Subduer", need:"When oppression surrounds you",
+    duas:["Ya Qahhaar, the One who subdues all false powers, subdue every tyrant who raises a hand against the innocent. Break the arrogance of those who spill the blood of Your beloved servants. Let their cruelty be crushed by Your justice. Subdue also arrogance within me, so that I never resemble the oppressor in any form."] },
+  { cat:"Strength", arabic:"ٱلجَبَّارُ", transliteration:"Al-Jabbaar", meaning:"The Compeller", need:"When you need mending",
+    duas:["Ya Jabbaar, mend what their hands have broken. Rebuild the lands they've shattered and heal the hearts that tremble for You under their bombs and their boots. Set right the fractures in our ummah, and make every wound a doorway back to You. When You allow us to break let it only be to rebuild us stronger, and when You heal us, let the healing bring us nearer to You."] },
+  { cat:"Strength", arabic:"ٱلقَدِيرُ", transliteration:"Al-Qadeer", meaning:"The All-Powerful", need:"When you feel powerless",
+    duas:["Ya Qadeer, Every decree rests in Your command. Write victory for the oppressed, freedom for the imprisoned, and safety for every child who sleeps beneath fear. Only You are able to turn tears into triumph, rubble into resurrection."] },
+
+  // JUSTICE
+  { cat:"Justice", arabic:"ٱلحَكَمُ", transliteration:"Al-Hakam", meaning:"The Judge", need:"When truth is buried beneath lies",
+    duas:["Ya Hakam, You are the judge when the courts of men fail. When truth is buried beneath lies, let Your verdict rise, clear, and unstoppable. Judge between us, and those who wrong us without remorse and let us not find ourselves except on the side of the oppressed."] },
+  { cat:"Justice", arabic:"ٱلعَدۡلُ", transliteration:"Al-'Adl", meaning:"The Just", need:"When the world feels rigged",
+    duas:["Ya 'Adl, O You whose balance never tips unfairly, when the world feels rigged for cruelty, remind us that You are merely delaying the cruel. And never unjust, even by the weight of a single atom. Make us witnesses to Your justice in this life and part of its fulfillment in the next. And let us love justice ourselves and be purified from oppression within."] },
+  { cat:"Justice", arabic:"ٱلحَسِيبُ", transliteration:"Al-Haseeb", meaning:"The Reckoner", need:"When proof is hidden",
+    duas:["Ya Haseeb, You are enough when proof is hidden and powers abused. Account for every tear that fell unseen, and every cruelty that was silenced by fear. Let Your reckoning come swift for those who harm and ever so gently for those who endure."] },
+
+  // CLOSENESS
+  { cat:"Closeness", arabic:"ٱلوَاحِدُ", transliteration:"Al-Waahid", meaning:"The Singular in His Being", need:"When you feel spiritually scattered",
+    duas:["Ya Waahid, unify my pursuits into a single direction. And when the world pulls me apart, center me in Your Oneness."] },
+  { cat:"Closeness", arabic:"ٱلأَحَدُ", transliteration:"Al-Ahad", meaning:"The Uniquely One", need:"When you need to return to Him",
+    duas:["Ya Ahad, open my heart to see that nothing compares to You, so that I'm never overly impressed by anyone but You. And I come to love Your Names and Attributes in a way that frees me from all others but You."] },
+  { cat:"Closeness", arabic:"ٱلوِتْرُ", transliteration:"Al-Witr", meaning:"The Singular in His Attributes", need:"When you stand alone at night",
+    duas:["Ya Witr, when I stand alone at the close of the night, let my solitude remind me of Your singular majesty. Make my heart distinct by its devotion and make me one of Your rarest servants."] },
+];
+
+const ALL_CATS = Object.keys(CATS);
+let activeFilter = "All";
+
+/* ── Filter pills ── */
+const pillsEl = document.getElementById("filterPills");
+["All", ...ALL_CATS].forEach(cat => {
+  const btn = document.createElement("button");
+  btn.className = "fpill" + (cat === "All" ? " active" : "");
+  btn.textContent = cat;
+  btn.addEventListener("click", () => {
+    activeFilter = cat;
+    document.querySelectorAll(".fpill").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    render();
+  });
+  pillsEl.appendChild(btn);
+});
+
+/* ── Render grouped content ── */
+function render() {
+  const el = document.getElementById("content");
+  el.innerHTML = "";
+  const show = activeFilter === "All" ? ALL_CATS : [activeFilter];
+
+  show.forEach((cat, ci) => {
+    const meta = CATS[cat];
+    const items = NAMES.filter(n => n.cat === cat);
+    if (!items.length) return;
+
+    const block = document.createElement("div");
+    block.className = "cat-block";
+    block.style.animationDelay = `${ci * 0.06}s`;
+
+    const iconBg = meta.color + "16";
+    block.innerHTML = `
+      <div class="cat-head">
+        <div class="cat-badge" style="background:${iconBg}">${meta.icon}</div>
+        <div class="cat-info">
+          <div class="cat-name" style="color:${meta.color}">${cat}</div>
+          <div class="cat-tagline">${meta.tag}</div>
+        </div>
+        <div class="cat-rule"></div>
+      </div>
+      <div class="cards-grid" id="grid-${cat.replace(/\s/g,'-')}"></div>`;
+
+    el.appendChild(block);
+    const grid = block.querySelector(`#grid-${cat.replace(/\s/g,'-')}`);
+
+    items.forEach((n, i) => {
+      const card = document.createElement("div");
+      card.className = "ncard";
+      card.style.animationDelay = `${ci * 0.06 + i * 0.05}s`;
+      card.innerHTML = `
+        <div class="ncard-stripe" style="background:linear-gradient(90deg,${meta.color},${meta.color}60)"></div>
+        <div class="ncard-arabic" style="color:${meta.color}">${n.arabic}</div>
+        <div class="ncard-english">${n.meaning}</div>
+        <div class="ncard-translit">${n.transliteration}</div>
+        <div class="ncard-sep"></div>
+        <div class="ncard-preview">${n.duas[0]}</div>
+        <div class="ncard-foot">
+          <span class="ncard-cta" style="color:${meta.color}">Read Du'a</span>
+          <span class="ncard-arrow" style="background:${meta.color}">→</span>
+        </div>`;
+      card.addEventListener("click", () => openModal(n, meta));
+      grid.appendChild(card);
+    });
+  });
+}
+
+/* ── Modal ── */
+function openModal(n, meta) {
+  const duaCards = n.duas.map(d =>
+    `<div class="modal-dua-card">
+       <p class="modal-dua-para">${hilite(d, meta.color)}</p>
+     </div>`
+  ).join("");
+
+  document.getElementById("modalInner").innerHTML = `
+    <div class="modal-arch" style="background:${meta.wash}">
+      <div class="arch-oval" style="background:${meta.color}"></div>
+      <div class="arch-cat" style="color:${meta.color}">${n.cat}</div>
+      <div class="arch-title" style="color:${meta.color}">${n.meaning}</div>
+      <div class="arch-need">${n.need}</div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-arabic-big" style="color:${meta.color}">${n.arabic}</div>
+      <div class="modal-translit">${n.transliteration}</div>
+      <div class="modal-dua-eyebrow">Du'a — Supplication</div>
+      ${duaCards}
+    </div>`;
+
+  document.getElementById("overlay").classList.add("on");
+  document.body.style.overflow = "hidden";
+}
+
+document.getElementById("modalX").addEventListener("click", closeModal);
+document.getElementById("overlay").addEventListener("click", e => {
+  if (e.target === document.getElementById("overlay")) closeModal();
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+function closeModal() {
+  document.getElementById("overlay").classList.remove("on");
+  document.body.style.overflow = "";
+}
+
+/* ── Highlight Ya Name ── */
+function hilite(text, color) {
+  return text.replace(
+    /Ya ([A-Z][a-zA-Z'\u2018\u2019-]+(?:\s[A-Z][a-zA-Z'\u2018\u2019-]+)*)/g,
+    `<span class="ya" style="color:${color}">Ya $1</span>`
+  );
+}
+
+/* ── AI Search ── */
+const emotionMap = [
+  { kw:["alone","lonely","isolat","no one","abandoned","no friends","by myself"], cat:"Loneliness" },
+  { kw:["anxious","anxiety","worry","scared","afraid","fear","nervous","panic","insecure"], cat:"Security" },
+  { kw:["sad","depress","hopeless","despair","down","low","crying","empty","hollow"], cat:"Inner Peace" },
+  { kw:["lost","confus","direction","purpose","meaning","don't know","searching"], cat:"Guidance" },
+  { kw:["guilt","shame","sin","mistake","regret","forgive","repent","mess up"], cat:"Forgiveness" },
+  { kw:["stuck","blocked","no way","trapped","doors closed","can't move"], cat:"Unstuck" },
+  { kw:["money","financial","broke","debt","afford","provision","poor","bills"], cat:"Provision" },
+  { kw:["peace","calm","quiet","still","rest","serene","can't sleep","overwhelm"], cat:"Inner Peace" },
+  { kw:["love","loved","unloved","nobody loves","don't feel loved"], cat:"Love" },
+  { kw:["seen","invisible","ignored","overlooked","unnoticed"], cat:"Being Seen" },
+  { kw:["close","distant","far from","disconnected","can't connect"], cat:"Closeness" },
+  { kw:["friend","friendship","company","someone to talk"], cat:"Friendship" },
+];
+
+const searchInput = document.getElementById("searchInput");
+const searchBtn   = document.getElementById("searchBtn");
+const loadingEl   = document.getElementById("searchLoading");
+const aiCardEl    = document.getElementById("aiCard");
+
+async function doSearch() {
+  const q = searchInput.value.trim();
+  if (!q) return;
+  aiCardEl.classList.remove("on");
+  loadingEl.classList.add("on");
+  searchBtn.disabled = true;
+
+  try {
+    const sys = `You are a compassionate Islamic spiritual guide. A Muslim has shared how they feel. Choose the single most comforting Name of Allah from the data provided and return the EXACT du'a text — word for word, completely unchanged.
+
+Respond ONLY in valid JSON with no markdown or backticks:
+{"cat":"<cat>","arabic":"<arabic>","transliteration":"<transliteration>","meaning":"<meaning>","need":"<need>","dua":"<exact dua text, word-for-word unchanged>"}`;
+
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 1000,
+        system: sys,
+        messages: [{ role: "user", content: `The person says: "${q}"\n\nNames data:\n${JSON.stringify(NAMES)}\n\nReturn only JSON.` }]
+      })
+    });
+    const data = await res.json();
+    const text = (data.content?.find(b => b.type === "text")?.text || "").replace(/```json|```/g,"").trim();
+    showAI(JSON.parse(text));
+  } catch {
+    const ql = q.toLowerCase();
+    let matched = null;
+    for (const e of emotionMap) { if (e.kw.some(k => ql.includes(k))) { matched = e.cat; break; } }
+    const n = matched ? NAMES.find(n => n.cat === matched) : NAMES.find(n => n.cat === "Inner Peace");
+    showAI({ cat:n.cat, arabic:n.arabic, transliteration:n.transliteration, meaning:n.meaning, need:n.need, dua:n.duas[0] });
+  } finally {
+    loadingEl.classList.remove("on");
+    searchBtn.disabled = false;
+  }
+}
+
+function showAI(r) {
+  const meta = CATS[r.cat] || { color:"var(--teal)", wash:"var(--teal-wash)" };
+  aiCardEl.innerHTML = `
+    <div class="ai-eyebrow">✦ A name for your heart</div>
+    <div class="ai-name-row">
+      <span class="ai-arabic-text" style="color:${meta.color}">${r.arabic}</span>
+      <span class="ai-english-name">${r.meaning}</span>
+    </div>
+    <div class="ai-translit">${r.transliteration}</div>
+    <div class="ai-pill" style="color:${meta.color};background:${meta.color}10;border:1px solid ${meta.color}22">${r.cat} · ${r.need}</div>
+    <div class="ai-sep"></div>
+    <div class="ai-dua-eyebrow">Du'a — Supplication</div>
+    <div class="ai-dua-body">${hilite(r.dua, meta.color)}</div>`;
+  aiCardEl.classList.add("on");
+  aiCardEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+searchBtn.addEventListener("click", doSearch);
+searchInput.addEventListener("keydown", e => { if (e.key === "Enter") doSearch(); });
+
+render();
+</script>
+</body>
+</html>
